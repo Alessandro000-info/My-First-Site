@@ -5,26 +5,95 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @font-face {
+            font-family: "fasterone";
+            src: url("font/FasterOne-Regular.woff2") format("woff2");
+            font-weight: bold;
+            font-style: normal;
+        }
         html, body {
             height: 100%;
             margin: 0;
         }
         h1{
             background: blue;
+            margin:0 auto ;
             color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "fasterone";
             text-align: center;
+            border: 3px solid;
+            border-color: rgb(0, 0, 0);
+            font-weight: normal;
+
             
         }
         body {
-            background-image: url("img/wallpaper.png");
+            background-color: hsl(0, 2%, 11%);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .formulario{
+            text-align: left;
+            line-height: 1.5;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(2, 20, 2);
+            width: 90%;
+            max-width: 400px ;
+            border-color: gray;
+            outline-style: solid;
+            outline-color: black;
+            padding: 10px;
+            font-weight: bold;
+            margin:0 auto;
+            border: 5px solid;
+        }
+        .bottom-area {
+            display: flex;
+            justify-content: center;
+        }
+        .campo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-top: 5px;
+        }
+        .campo label{
+            width: 150px;
+        }
+        .campo input{
+            flex: 1;
+        }
+        #submit{
+            flex: 1;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Preencha o formulário</h1> 
+    <form class="formulario" method="post">
+        <h1 >Preencha o formulário</h1>
+        <div class="campo"><label  for="nome">Nome Completo:</label>
+        <input  type="text" id="nome" name="nome" required></div>
+        <div class="campo"><label  for="email">Email:</label>
+        <input  type="email" id="email" name="email" required></div>
+        <div class="campo"><label  for="tel">DDD/Telefone:</label>
+        <input  type="tel" id="tel" name="telefone" required></div>
+        <div class="campo"><label  for="nascimento">Data de Nascimento:</label>
+        <input  type="date" id="nascimento" name="nascimento" required></div>
+        <div class="campo"><label  for="password">Senha:</label>
+        <input type="password" id="password" name="password" required></div>
+        <div class="bottom-area">
+            <input type="submit" id="submit" value="Enviar">
+        </div> 
+    </form>
 </body>
 </html>
